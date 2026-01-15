@@ -1,0 +1,143 @@
+{
+  "completed_steps": [
+    "strategy",
+    "planning",
+    "writer_taichung-attractions-guide",
+    "fact_check_taichung-attractions-guide",
+    "seo_opt_taichung-attractions-guide",
+    "publish_taichung-attractions-guide",
+    "writer_taipei-mrt-orange-line-attractions",
+    "fact_check_taipei-mrt-orange-line-attractions",
+    "seo_opt_taipei-mrt-orange-line-attractions",
+    "publish_taipei-mrt-orange-line-attractions",
+    "writer_taichung-accommodation-guide",
+    "fact_check_taichung-accommodation-guide",
+    "seo_opt_taichung-accommodation-guide",
+    "publish_taichung-accommodation-guide"
+  ],
+  "results": {
+    "strategy": {
+      "status": "success",
+      "strategy": {
+        "primary_keyword": "2026年大阪環球影城攻略",
+        "secondary_keywords": [
+          "2026年大阪環球影城攻略 guide",
+          "2026年大阪環球影城攻略 tips",
+          "best 2026年大阪環球影城攻略"
+        ],
+        "search_intent": "Informational",
+        "competitor_analysis": "Found 3 competitors covering this topic.",
+        "content_gap": "Detailed analysis pending Antigravity workflow integration.",
+        "suggested_title": "The Ultimate Guide to 2026年大阪環球影城攻略",
+        "target_audience_segment": "General audience interested in 2026年大阪環球影城攻略",
+        "keyword_difficulty": "Medium",
+        "search_volume_estimate": "Medium",
+        "cluster_pages": [
+          {
+            "title": "[EXISTING] 2024台中景點｜最新40個台中必去景點推薦，台中一日遊、情侶約會、網美IG打卡、親子旅遊、主題路線懶人包",
+            "main_keyword": "2026年大阪環球影城攻略 景點",
+            "slug": "attractions-guide",
+            "category": "Travel",
+            "intent": "Informational",
+            "link_back_anchor": "Attractions",
+            "status": "EXISTING",
+            "existing_url": "https://test-funit.welcometw.com/%e5%8f%b0%e4%b8%ad%e6%99%af%e9%bb%9e%e6%8e%a8%e8%96%a6%ef%bd%9c%e5%bf%85%e5%8e%bb%e6%89%93%e5%8d%a1%e6%99%af%e9%bb%9e24%e9%81%b8/"
+          },
+          {
+            "title": "[EXISTING] 台北捷運橘線景點地圖：中和新蘆線美食攻略，大稻埕拜月老、空軍三重一村眷村遊",
+            "main_keyword": "2026年大阪環球影城攻略 美食",
+            "slug": "food-guide",
+            "category": "Food",
+            "intent": "Informational",
+            "link_back_anchor": "Food Guide",
+            "status": "EXISTING",
+            "existing_url": "https://test-funit.welcometw.com/taipei-mrt-orange-line-attractions/"
+          },
+          {
+            "title": "[EXISTING] 【2024台中住宿推薦】30間高評價台中飯店，台中車站/逢甲/一中/勤美草悟道附近住宿",
+            "main_keyword": "2026年大阪環球影城攻略 住宿",
+            "slug": "accommodation-guide",
+            "category": "Accommodation",
+            "intent": "Commercial",
+            "link_back_anchor": "Accommodation Guide",
+            "status": "EXISTING",
+            "existing_url": "https://test-funit.welcometw.com/%e5%8f%b0%e4%b8%ad%e4%bd%8f%e5%ae%bf%e6%8e%a8%e8%96%a6/"
+          }
+        ]
+      },
+      "context_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/raw_data/p01_context.json"
+    },
+    "planning": {
+      "status": "success",
+      "generated_briefs": [
+        "taichung-attractions-guide",
+        "taipei-mrt-orange-line-attractions",
+        "taichung-accommodation-guide"
+      ]
+    },
+    "writer_taichung-attractions-guide": {
+      "draft_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taichung-attractions-guide.md",
+      "slug": "taichung-attractions-guide",
+      "brand": "FUNIT"
+    },
+    "fact_check_taichung-attractions-guide": {
+      "status": "error",
+      "message": "Input file not found at outputs/FUNIT/final/taichung-attractions-guide.md"
+    },
+    "seo_opt_taichung-attractions-guide": {
+      "status": "error",
+      "message": "File not found: [Errno 2] No such file or directory: '/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taichung-attractions-guide.md'"
+    },
+    "publish_taichung-attractions-guide": {
+      "status": "error",
+      "message": "Article not found at /Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/final/taichung-attractions-guide.md"
+    },
+    "writer_taipei-mrt-orange-line-attractions": {
+      "draft_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taipei-mrt-orange-line-attractions.md",
+      "slug": "taipei-mrt-orange-line-attractions",
+      "brand": "FUNIT"
+    },
+    "fact_check_taipei-mrt-orange-line-attractions": {
+      "status": "error",
+      "message": "Input file not found at outputs/FUNIT/final/taipei-mrt-orange-line-attractions.md"
+    },
+    "seo_opt_taipei-mrt-orange-line-attractions": {
+      "status": "error",
+      "message": "File not found: [Errno 2] No such file or directory: '/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taipei-mrt-orange-line-attractions.md'"
+    },
+    "publish_taipei-mrt-orange-line-attractions": {
+      "status": "error",
+      "message": "Article not found at /Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/final/taipei-mrt-orange-line-attractions.md"
+    },
+    "writer_taichung-accommodation-guide": {
+      "draft_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taichung-accommodation-guide.md",
+      "slug": "taichung-accommodation-guide",
+      "brand": "FUNIT"
+    },
+    "fact_check_taichung-accommodation-guide": {
+      "status": "error",
+      "message": "Input file not found at outputs/FUNIT/final/taichung-accommodation-guide.md"
+    },
+    "seo_opt_taichung-accommodation-guide": {
+      "status": "error",
+      "message": "File not found: [Errno 2] No such file or directory: '/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taichung-accommodation-guide.md'"
+    },
+    "publish_taichung-accommodation-guide": {
+      "status": "error",
+      "message": "Article not found at /Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/final/taichung-accommodation-guide.md"
+    }
+  },
+  "topic": "2026年大阪環球影城攻略",
+  "brand": "FUNIT",
+  "strategy_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/strategies/topic_cluster_2026年大阪環球影城攻略.json",
+  "slugs": [
+    "taichung-attractions-guide",
+    "taipei-mrt-orange-line-attractions",
+    "taichung-accommodation-guide"
+  ],
+  "article_drafts": {
+    "taichung-attractions-guide": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taichung-attractions-guide.md",
+    "taipei-mrt-orange-line-attractions": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taipei-mrt-orange-line-attractions.md",
+    "taichung-accommodation-guide": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/drafts/taichung-accommodation-guide.md"
+  }
+}

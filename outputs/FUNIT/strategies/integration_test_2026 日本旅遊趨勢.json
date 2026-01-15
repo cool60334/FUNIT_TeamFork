@@ -1,0 +1,41 @@
+{
+  "primary_keyword": "2026 日本旅遊趨勢",
+  "secondary_keywords": [
+    "2026 日本旅遊趨勢 guide",
+    "2026 日本旅遊趨勢 tips",
+    "best 2026 日本旅遊趨勢"
+  ],
+  "search_intent": "Informational",
+  "competitor_analysis": "Found 0 competitors covering this topic.",
+  "content_gap": "Detailed analysis pending Antigravity workflow integration.",
+  "suggested_title": "The Ultimate Guide to 2026 日本旅遊趨勢",
+  "target_audience_segment": "General audience interested in 2026 日本旅遊趨勢",
+  "keyword_difficulty": "Medium",
+  "search_volume_estimate": "Medium",
+  "cluster_pages": [
+    {
+      "title": "2026 日本旅遊趨勢: 必去景點推薦",
+      "main_keyword": "2026 日本旅遊趨勢 景點",
+      "slug": "attractions-guide",
+      "category": "Travel",
+      "intent": "Informational",
+      "link_back_anchor": "Attractions"
+    },
+    {
+      "title": "2026 日本旅遊趨勢: 在地美食攻略",
+      "main_keyword": "2026 日本旅遊趨勢 美食",
+      "slug": "food-guide",
+      "category": "Food",
+      "intent": "Informational",
+      "link_back_anchor": "Food Guide"
+    },
+    {
+      "title": "2026 日本旅遊趨勢: 住宿精選",
+      "main_keyword": "2026 日本旅遊趨勢 住宿",
+      "slug": "accommodation-guide",
+      "category": "Accommodation",
+      "intent": "Commercial",
+      "link_back_anchor": "Accommodation Guide"
+    }
+  ]
+}

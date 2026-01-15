@@ -1,0 +1,98 @@
+{
+  "completed_steps": [
+    "strategy",
+    "planning"
+  ],
+  "results": {
+    "strategy": {
+      "status": "success",
+      "strategy": {
+        "primary_keyword": "Orchestrator Test",
+        "secondary_keywords": [
+          "Orchestrator Test guide",
+          "Orchestrator Test tips",
+          "best Orchestrator Test"
+        ],
+        "search_intent": "Informational",
+        "competitor_analysis": "Found 3 competitors covering this topic.",
+        "content_gap": "Detailed analysis pending Antigravity workflow integration.",
+        "suggested_title": "[OPTIMIZE] test",
+        "target_audience_segment": "General audience interested in Orchestrator Test",
+        "keyword_difficulty": "Medium",
+        "search_volume_estimate": "Medium",
+        "cluster_pages": [
+          {
+            "title": "[EXISTING] 台北捷運綠線景點地圖：松山新店線親子週末小旅行，中山/公館/碧潭一日遊",
+            "main_keyword": "Orchestrator Test 景點",
+            "slug": "attractions-guide",
+            "category": "Travel",
+            "intent": "Informational",
+            "link_back_anchor": "Attractions",
+            "status": "EXISTING",
+            "existing_url": "https://test-funit.welcometw.com/taipei-mrt-green-line-attractions/"
+          },
+          {
+            "title": "[EXISTING] 台北捷運橘線景點地圖：中和新蘆線美食攻略，大稻埕拜月老、空軍三重一村眷村遊",
+            "main_keyword": "Orchestrator Test 美食",
+            "slug": "food-guide",
+            "category": "Food",
+            "intent": "Informational",
+            "link_back_anchor": "Food Guide",
+            "status": "EXISTING",
+            "existing_url": "https://test-funit.welcometw.com/taipei-mrt-orange-line-attractions/"
+          },
+          {
+            "title": "[EXISTING] 【2024台中住宿推薦】30間高評價台中飯店，台中車站/逢甲/一中/勤美草悟道附近住宿",
+            "main_keyword": "Orchestrator Test 住宿",
+            "slug": "accommodation-guide",
+            "category": "Accommodation",
+            "intent": "Commercial",
+            "link_back_anchor": "Accommodation Guide",
+            "status": "EXISTING",
+            "existing_url": "https://test-funit.welcometw.com/%e5%8f%b0%e4%b8%ad%e4%bd%8f%e5%ae%bf%e6%8e%a8%e8%96%a6/"
+          }
+        ],
+        "duplication_check": {
+          "has_similar_content": true,
+          "similarity_score": 0.5,
+          "existing_articles": [
+            {
+              "id": "142041",
+              "title": "test",
+              "url": "https://test-funit.welcometw.com/142041-2/",
+              "similarity": 0.5,
+              "content_type": "Pillar Page"
+            }
+          ],
+          "recommendation": "optimize_existing_pillar",
+          "recommendation_reason": "System automatically detected existing content: test"
+        },
+        "pillar_page": {
+          "title": "test",
+          "id": "142041",
+          "slug": "142041-2",
+          "main_keyword": "Orchestrator Test"
+        }
+      },
+      "context_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/raw_data/p01_context.json"
+    },
+    "planning": {
+      "status": "success",
+      "generated_briefs": [
+        "142041-2",
+        "taipei-mrt-green-line-attractions",
+        "taipei-mrt-orange-line-attractions",
+        "taichung-accommodation-guide"
+      ]
+    }
+  },
+  "topic": "Orchestrator Test",
+  "brand": "FUNIT",
+  "strategy_path": "/Users/garyyang/Desktop/我個人/玩/AI自動化內容團隊 - FUNIT/outputs/FUNIT/strategies/topic_cluster_orchestrator-test.json",
+  "slugs": [
+    "142041-2",
+    "taipei-mrt-green-line-attractions",
+    "taipei-mrt-orange-line-attractions",
+    "taichung-accommodation-guide"
+  ]
+}

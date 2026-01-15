@@ -1,0 +1,32 @@
+# Environment variables
+.env
+.env.*
+!.env.template
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.pytest_cache/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Generated Data (Optional - considering the user wants the code)
+# outputs/
+# site_structure.json
+
+# Vector Databases (向量資料庫 - 可透過全站掃描重建)
+data/lancedb/
+data/chromadb_content/
+data/chromadb_style/
+
+# Temporary
+tmp/
+*.log

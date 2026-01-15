@@ -1,0 +1,87 @@
+{
+  "brand_identity": {
+    "name": "好好玩FUNIT",
+    "domain": "test-funit.welcometw.com",
+    "category": "旅遊 (國內、國外)",
+    "tagline": "找靈感、做功課？一站搞定你的下一趟旅行",
+    "description": "專為現代旅人打造的「一站式旅遊靈感平台」，整合了國內外從熱門景點、巷弄美食到嚴選住宿的深度資訊。透過挖掘隱藏版玩法與高評價推薦，解決行程規劃的繁瑣痛點，致力於成為讀者心中最值得信賴的「懂玩夥伴」。",
+    "founding_story": "自 2017 年創站以來，我們始終以中文旅遊資訊的 SEO 為核心，從旅客的搜尋與消費意圖出發，提供最實用、最貼近需求的旅遊內容。從最初專注於日月潭單一景區出發，我們逐步擴展至全台灣乃至全球各地，服務範圍涵蓋景點、交通、住宿與行程規劃。憑藉專業內容與持續優化，我們已從地方型網站成長為全台最大、最受信賴的旅遊資訊平台之一。"
+  },
+  "content_strategy": {
+    "language": "zh-TW",
+    "default_category": "▸旅遊情報",
+    "target_audience_profile": "docs/brand_guideline.md",
+    "tone_voice_guide": "docs/brand_guideline.md",
+    "primary_keywords": [
+      "縣市名稱+景點",
+      "縣市名稱+美食",
+      "縣市名稱+住宿"
+    ],
+    "competitors": [
+      {
+        "name": "小兔小安旅遊札記",
+        "website": "https://bunnyann.tw/",
+        "note": "旅遊部落客"
+      },
+      {
+        "name": "V妞的旅行",
+        "website": "https://vivianexplore.tw/",
+        "note": "旅遊部落客"
+      }
+    ]
+  },
+  "visual_identity": {
+    "illustration_style": "Real Photography",
+    "illustration_style_details": "High-quality, bright, and vibrant photographs showcasing travel destinations and food. Minimal use of illustrations.",
+    "color_palette": {
+      "primary": "#FFFFFF",
+      "secondary": "#00B9FF",
+      "accent": "#00B9FF",
+      "neutral": "#333333"
+    },
+    "mood": "Fun, Light, Modern, Airy",
+    "reference_keywords": [
+      "bright travel photography",
+      "modern minimal layout",
+      "content-first design",
+      "vibrant colors",
+      "teal accent"
+    ],
+    "image_generation_preferences": {
+      "standard_model": "gemini-flash-2.5-image",
+      "premium_model": "gemini-3-pro-image-preview",
+      "max_premium_per_article": 1,
+      "preferred_aspect_ratio": "16:9"
+    },
+    "image_strategy": {
+      "mode": "placeholder_only",
+      "density": "high",
+      "placeholder_format": "![{keyword}: {scene_description}](PLACEHOLDER)"
+    }
+  },
+  "data_sources": {
+    "website_url": "https://test-funit.welcometw.com/",
+    "social_platforms": [
+      "https://www.facebook.com/welcometw2020/",
+      "https://www.instagram.com/funit_tw/",
+      "https://www.threads.com/@funit_tw"
+    ],
+    "youtube_channel": "https://www.youtube.com/@funit_tw",
+    "youtube_video_urls": [
+      "https://youtu.be/XuccHs-57Ps?si=r8ue1z9Adz_i_Shl"
+    ],
+    "contact_channels": {
+      "email": "funit@fontrip.com",
+      "official_line": "https://lihi2.com/Ual9t"
+    },
+    "forum_research_urls": [
+      "https://www.ptt.cc/bbs/Travel/index.html",
+      "https://www.dcard.tw/f/travel"
+    ]
+  },
+  "file_paths": {
+    "raw_data_dir": "outputs/FUNIT/raw_data",
+    "guideline_path": "docs/brand_guideline.md",
+    "articles_dir": "outputs/FUNIT/content"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "organization": {
+    "name": "好好玩 FUNIT",
+    "url": "https://www.welcometw.com/",
+    "logo": "https://www.welcometw.com/wp-content/uploads/2022/05/BrandLogo_FUNIT_1-120x50.png",
+    "phone": "",
+    "social": [
+      "https://www.facebook.com/welcometw2020/"
+    ]
+  },
+  "local_business": {
+    "name": "好好玩 FUNIT",
+    "type": "旅遊媒體",
+    "address": "東區公道五路二段120號5樓之1",
+    "city": "新竹市",
+    "postalCode": "300046"
+  },
+  "article_defaults": {
+    "author": "好好玩 FUNIT",
+    "author_url": "https://www.welcometw.com/author/funit/",
+    "copyright": "好好玩 FUNIT"
+  }
+}
