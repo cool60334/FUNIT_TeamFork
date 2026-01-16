@@ -19,7 +19,7 @@ venv/
 .idea/
 
 # Generated Data (Optional - considering the user wants the code)
-# outputs/
+outputs/
 # site_structure.json
 
 # Vector Databases (向量資料庫 - 可透過全站掃描重建)
