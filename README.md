@@ -1,158 +1,216 @@
-# 🎭 AI 自動化內容團隊 - 員工名冊 (Agent Roster)
+# AI 自動化內容團隊 - FUNIT
 
-本目錄存放所有 Agent Skills 的定義與規範。
-
-## 📋 技能目錄
-
-| 編號 | 職稱 (Role) | 職責 (Responsibility) | 適用情境 (Trigger) |
-| :--- | :--- | :--- | :--- |
-| **00-09** | **管理與核心 (The Brain)** | | |
-| 00 | 專案經理 (Project Manager) | 協調多步驟內容流程與跨技能串接 | 需要規劃流程、拆解任務或整合多個技能 |
-| 01 | 自動化開發工頭 (Task Master) | 將自然語言需求轉換為 Ralph Loop 自動化開發指令 | 需要開發新功能或執行自動化指令 |
-| 02 | 品牌建構師 (Brand Architect) | 建立或更新品牌指南、語氣與視覺識別 | 初始化品牌設定或更新品牌規範 |
-| 03 | 企業知識庫 (Knowledge Base) | 管理 Fact Memory（存入/查詢/匯入 PDF） | 維護事實記憶或導入官方文件 |
-| 04 | 系統醫生 (System Doctor) | 檢查系統環境、依賴、API 金鑰與連線 | 環境檢查、Debug 或初始化失敗 |
-| **10-19** | **策略規劃 (Strategy)** | | |
-| 10 | 關鍵字策略師 (Keyword Strategist) | 關鍵字策略分析、主題集群與重複性檢查 | 進行 SEO 主題研究與關鍵字規劃 |
-| 11 | 內容企劃師 (Content Planner) | 生成內容 Brief/大綱與搜尋意圖研究 | 產出文章結構、大綱或 Brief |
-| **20-29** | **內容生產 (Production)** | | |
-| 20 | 內容撰稿人 (Content Writer) | 依 Brief 撰寫文章草稿並符合品牌語氣 | 撰寫內容草稿 |
-| 21 | SEO優化師 (SEO Specialist) | 優化文章 SEO 元素、Meta/Schema/FAQ | 進行 SEO 優化與檢查 |
-| 22 | 資訊查核員 (Fact Checker) | 查核文章中的事實與數據並修正錯誤 | 事實查核或確認內容正確性 |
-| 23 | 視覺總監 (Visual Director) | 規劃文章配圖、生成圖片描述並替換連結 | 配圖規劃與圖片策略執行 |
-| 24 | 內部連結專家 (Link Builder) | 在文章中插入服務或產品推薦區塊 | 需要服務推薦或建立內部連結 |
-| 25 | CTA管理員 (CTA Manager) | 維護 CTA 連結與 UTM 規範並進行批次更新 | 統一或更新 CTA 連結 |
-| **30-39** | **維運與工具 (Ops & Tools)** | | |
-| 30 | 文章發布員 (Publisher) | 將最終文章發布或更新至 WordPress | 發布文章或更新線上內容 |
-| 31 | 舊文翻新工程師 (Content Refactorer) | 自動化舊文重構流程（抓取、生成、重寫、發布） | 重構已發布的舊文章 |
-| 32 | 文章維修員 (Content Corrector) | 修正已發布文章的事實錯誤並更新同步 | 修正線上文章錯誤資訊 |
-| 33 | 資料同步員 (Data Syncer) | 同步 WordPress 全站資料到本地與向量資料庫 | 全站資料掃描或同步 |
-| 34 | 風格學習師 (Style Gardener) | 從人類修訂中學習並更新 Style Memory | 進行風格學習或更新語氣規則 |
-| 35 | 技能訓練師 (Skill Builder) | 建立或更新 Gemini Skills 的規範與流程 | 新增 Skill、整理文件或打包技能 |
-| **99** | **指南 (Guide)** | | |
-| 99 | 系統使用指南 (User Guide) | 引導使用者了解系統功能與工作流程 | 查詢功能、快速開始或操作指引 |
-
-## 🛠️ 技能使用說明 (Skill Usage Guide)
-
-本系統使用 Gemini CLI Skills + Antigravity 來擴充 AI Agent 的能力。Skills 是按需載入的專業知識模組。
-
-### 1. 技能存放位置
-Skills 來自三個主要位置，Gemini 會自動偵測：
-*   **專案技能 (Project Skills)**： `.gemini/skills/` (本專案專用，隨專案版本控制)
-*   **使用者技能 (User Skills)**： `~/.gemini/skills/` (跨專案通用)
-*   **擴充技能 (Extension Skills)**： 來自安裝的 Extension
-
-### 2. 在對話中使用 (Interactive Session)
-在與 Gemini 的對話中，可以使用 `/skills` 指令來管理：
-
-*   `/skills list`： 列出目前可用的所有技能與狀態。
-*   `/skills reload`： 重新載入所有技能 (當你新增或修改 Skill 檔案後使用)。
-*   `/skills disable <name>`： 暫時停用某個技能。
-*   `/skills enable <name>`： 重新啟用技能。
-
-### 3. 在終端機管理 (Terminal)
-在終端機 (Terminal) 中，可以使用 `gemini skills` 指令：
-
-```bash
-# 列出所有已偵測到的技能
-gemini skills list
-
-# 安裝技能 (預設安裝到使用者層級 ~/.gemini/skills)
-gemini skills install https://github.com/user/repo.git
-
-# 安裝到本專案 (.gemini/skills)
-gemini skills install /path/to/skill --scope workspace
-```
-
-### 4. 建立新技能 (Creating a Skill)
-要建立一個新技能，只需建立一個包含 `SKILL.md` 的目錄：
-1.  **建立目錄**： `mkdir .gemini/skills/my-new-skill`
-2.  **定義技能**： 在該目錄下建立 `SKILL.md`，並定義 YAML metadata 與 Markdown 指令。
-
-### 5. Google Antigravity (Natural Language)
-Google Antigravity 讓你可以直接使用自然語言來呼叫 Agent，無需任何預先載入或複雜指令。
-
-你只需要在對話中直接說出你的需求，系統會自動識別並啟動相關的 Agent Skill。
-
-**範例**：
-> User: "幫我規劃關於 'AI 工具' 的關鍵字策略"
->
-> System: (自動啟動 **10. 關鍵字策略師 (Keyword Strategist)** 來處理請求)
+一套幫助你自動撰寫、優化、發布旅遊文章的 AI 系統。
 
 ---
 
-## 🚀 初次設置 (Initial Setup)
+## 這套系統能幫你做什麼？
 
-首次取得此專案時，請依照以下步驟進行設置：
+| 你想做的事 | 對 AI 說 | AI 會幫你 |
+|------------|----------|-----------|
+| 寫一篇新文章 | 「幫我寫一篇關於台北一日遊的文章」 | 研究關鍵字 → 規劃大綱 → 撰寫內容 → SEO 優化 |
+| 更新舊文章 | 「幫我更新這篇文章：[網址]」 | 抓取內容 → 重新撰寫 → 發布更新 |
+| 檢查文章正確性 | 「幫我查核這篇文章的資訊」 | 驗證營業時間、價格、地址等資訊 |
+| 發布到網站 | 「把這篇文章發布到 WordPress」 | 自動上傳、設定分類、SEO 標籤 |
 
-### 1. 安裝依賴
+---
+
+## 快速開始（5 分鐘設定）
+
+### 第一步：安裝環境
 
 ```bash
-# 建立虛擬環境
+# 1. 開啟終端機，進入專案資料夾
+cd "AI自動化內容團隊 - FUNIT"
+
+# 2. 建立虛擬環境
 python3 -m venv venv
 source venv/bin/activate
 
-# 安裝 Python 套件
+# 3. 安裝需要的套件
 pip install -r requirements.txt
 ```
 
-### 2. 設定環境變數
+### 第二步：設定 API 金鑰
 
 ```bash
-# 複製範本並填入 API Keys
+# 1. 複製範本檔案
 cp .env.example .env
-# 編輯 .env 填入必要的 API Keys
+
+# 2. 用文字編輯器打開 .env，填入你的金鑰
 ```
 
-### 3. 重建向量資料庫
+你需要填入：
+| 項目 | 說明 | 哪裡取得 |
+|------|------|----------|
+| `GEMINI_API_KEY` | Google AI 金鑰 | [Google AI Studio](https://aistudio.google.com/apikey) |
+| `WP_SITE_URL` | 你的 WordPress 網址 | 例如 `https://yoursite.com` |
+| `WP_USERNAME` | WordPress 使用者名稱 | WordPress 後台 |
+| `WP_APP_PASSWORD` | WordPress 應用程式密碼 | WordPress → 使用者 → 應用程式密碼 |
 
-向量資料庫（LanceDB / ChromaDB）不包含在 Git 中，需要透過全站掃描重建：
+### 第三步：同步網站資料
 
 ```bash
-# 執行全站掃描同步
-python agents/site_auditor.py
+# 掃描你的網站，讓 AI 認識你的內容
+python scripts/run_integration.py
 ```
 
-> **💡 提示**：此步驟會掃描 WordPress 網站內容並建立本地向量資料庫，首次執行可能需要幾分鐘時間。
+### 第四步：開始使用
 
-### 4. 確認系統狀態
+使用 [Gemini CLI](https://github.com/google-gemini/gemini-cli) 或 Google AI Studio 與系統對話。
 
-使用系統醫生 (Skill 04) 檢查環境是否正確設置：
+---
+
+## 常見使用情境
+
+### 情境一：寫一篇新文章
 
 ```
-在 Gemini 對話中輸入：「幫我檢查系統環境是否正常」
+你：幫我規劃「台中景點」這個主題的關鍵字策略
+
+AI：我來幫你分析...
+    - 主關鍵字：台中景點
+    - 延伸關鍵字：台中一日遊、台中必去、台中網美景點
+    - 建議文章結構：...
+
+你：好，幫我撰寫文章草稿
+
+AI：根據策略，我來撰寫文章...
+```
+
+### 情境二：更新舊文章
+
+```
+你：這篇文章需要更新 https://yoursite.com/old-article
+
+AI：我來幫你：
+    1. 抓取現有內容
+    2. 查核過時資訊
+    3. 重新撰寫並優化
+    4. 發布更新版本
+```
+
+### 情境三：批次檢查文章
+
+```
+你：幫我檢查網站上關於「日月潭」的所有文章是否有過時資訊
+
+AI：我找到 5 篇相關文章，開始檢查...
 ```
 
 ---
 
-## ⚠️ 專案結構限制
+## AI 團隊成員介紹
 
-> **重要**：以下資料夾名稱**不可修改**，程式碼中有硬編碼相依。
+這套系統包含多個專業 AI 角色，各司其職：
 
-### 🔒 不可修改的資料夾
+### 管理組（編號 00-09）
+| 角色 | 負責什麼 |
+|------|----------|
+| 專案經理 | 協調多個任務、安排工作流程 |
+| 品牌建構師 | 維護品牌風格、語氣設定 |
+| 系統醫生 | 檢查系統是否正常運作 |
 
-| 資料夾 | 用途 | 為什麼不能改 |
-|--------|------|--------------|
-| `outputs/` | 內容產出存放處 | 多處程式碼參照此路徑 |
-| `data/` | 向量資料庫位置 | LanceDB/ChromaDB 預設路徑 |
-| `config/` | 設定檔位置 | 品牌設定、系統設定 |
-| `docs/` | 品牌指南存放處 | `brand_profile.json` 參照 |
-| `agents/` | AI Agent 程式碼 | 核心邏輯 |
-| `.gemini/skills/` | Gemini Skills 定義 | Gemini CLI 規範路徑 |
+### 策略組（編號 10-19）
+| 角色 | 負責什麼 |
+|------|----------|
+| 關鍵字策略師 | 分析哪些關鍵字值得寫、避免重複 |
+| 內容企劃師 | 規劃文章大綱和結構 |
 
-### ✅ 可修改的設定
+### 製作組（編號 20-29）
+| 角色 | 負責什麼 |
+|------|----------|
+| 內容撰稿人 | 撰寫文章內容 |
+| SEO 優化師 | 讓文章更容易被 Google 搜尋到 |
+| 資訊查核員 | 確認文章資訊正確（營業時間、價格等）|
 
-如需更換品牌名稱（例如 `FUNIT` → `MyBrand`），請修改：
+### 發布組（編號 30-39）
+| 角色 | 負責什麼 |
+|------|----------|
+| 文章發布員 | 把文章發布到 WordPress |
+| 舊文翻新工程師 | 自動更新過時的舊文章 |
+| 資料同步員 | 同步網站資料到本地 |
 
-1. `config/brand_profile.json` 中的 `brand_identity.name`
-2. 系統會自動在 `outputs/` 下建立對應的品牌資料夾
+---
+
+## 什麼是 SEO？（給初學者）
+
+**SEO（搜尋引擎優化）** 就是讓你的文章更容易被 Google 找到的技術。
+
+想像你開了一間店，SEO 就像是：
+- 把店面招牌寫清楚（標題優化）
+- 在地圖上標記位置（結構化資料）
+- 讓路過的人知道你賣什麼（Meta 描述）
+
+這套系統會自動幫你處理這些，你只需要專注在內容本身。
+
+---
+
+## 重要檔案說明
+
+| 檔案/資料夾 | 用途 |
+|-------------|------|
+| `config/brand_profile.json` | 品牌設定（名稱、網址、風格）|
+| `docs/brand_guideline.md` | 品牌寫作指南 |
+| `seo_data_setup.md` | SEO 結構化資料設定 |
+| `outputs/` | AI 產出的文章存放處 |
+| `.env` | API 金鑰（不會上傳到 Git）|
+
+---
+
+## 遇到問題？
+
+### 檢查系統狀態
+```
+對 AI 說：「幫我檢查系統環境是否正常」
+```
+
+### 常見問題
+
+**Q: 出現「API Key 無效」**
+A: 確認 `.env` 檔案中的 `GEMINI_API_KEY` 是否正確填入
+
+**Q: 無法連接 WordPress**
+A: 確認 WordPress 應用程式密碼是否正確，以及網站是否允許 REST API
+
+**Q: 文章風格不對**
+A: 修改 `docs/brand_guideline.md` 中的語氣設定
+
+---
+
+## 進階設定
+
+### 修改品牌名稱
+
+編輯 `config/brand_profile.json`：
 
 ```json
-// config/brand_profile.json
 {
   "brand_identity": {
-    "name": "MyBrand",  // ← 修改這裡
-    ...
+    "name": "你的品牌名稱",
+    "domain": "你的網站網址"
   }
 }
 ```
+
+### 資料夾結構（勿修改）
+
+以下資料夾名稱是固定的，請勿更改：
+
+| 資料夾 | 用途 |
+|--------|------|
+| `outputs/` | AI 產出檔案 |
+| `data/` | 向量資料庫 |
+| `config/` | 設定檔 |
+| `agents/` | AI 程式碼 |
+| `.gemini/skills/` | AI 技能定義 |
+
+---
+
+## 技術支援
+
+如有問題，請聯繫專案開發者。
+
+---
+
+*本系統使用 Google Gemini AI 驅動，搭配 LanceDB 向量資料庫進行語意搜尋。*
