@@ -1,4 +1,4 @@
-from agents.core import BaseAgent, PathResolver, resolve_path
+from agents.core import BaseAgent, PathResolver, resolve_path, get_brand_manager
 from utils.vector_db_manager import vector_db
 from typing import Dict, Any, List
 import os

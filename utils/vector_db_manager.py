@@ -125,8 +125,8 @@ class VectorDBManager:
                 "document": item["document"],
                 "vector": vectors[i],
                 "type": metadata.get("type", "guideline"),
-                "trigger": metadata.get("trigger", ""),
-                "change": metadata.get("change", ""),
+                # "trigger": metadata.get("trigger", ""), # Removed due to schema mismatch
+                # "change": metadata.get("change", ""),   # Removed due to schema mismatch
                 "section": metadata.get("section", ""),
                 "source": metadata.get("source", ""),
                 "status": metadata.get("status", "publish"),
