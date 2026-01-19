@@ -57,7 +57,31 @@ python scripts/run_integration.py
 
 ### 第四步：開始使用
 
-使用 [Gemini CLI](https://github.com/google-gemini/gemini-cli) 或 Google AI Studio 與系統對話。
+本系統的技能（Skills）可搭配多種 AI 工具使用：
+
+| AI 工具 | 說明 |
+|---------|------|
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | Google 官方命令列工具，原生支援 `.gemini/skills/` |
+| Google Antigravity | Gemini 的自然語言介面，自動識別並啟動技能（內建於 Gemini CLI）|
+| [Claude Code](https://claude.ai/code) | Anthropic 官方 CLI，支援讀取專案技能 |
+| [Cursor](https://cursor.com) / [Windsurf](https://codeium.com/windsurf) | AI 程式編輯器，可載入專案上下文 |
+
+> 請依照各工具官網的最新安裝指引進行安裝。
+
+**使用方式**：
+1. 在專案資料夾中啟動你選擇的 AI 工具
+2. AI 會自動讀取 `.gemini/skills/` 中的技能定義
+3. 直接用自然語言描述你要做的事
+
+```bash
+# 範例：使用 Gemini CLI
+cd "AI自動化內容團隊 - FUNIT"
+gemini
+
+# 範例：使用 Claude Code
+cd "AI自動化內容團隊 - FUNIT"
+claude
+```
 
 ---
 
