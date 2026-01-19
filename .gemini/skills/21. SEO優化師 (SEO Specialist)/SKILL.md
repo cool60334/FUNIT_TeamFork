@@ -42,7 +42,7 @@
 
 ## 執行指令
 - `/21_SEO優化`: 對文章進行關鍵字佈局、Meta 設定及 Schema 生成。
-- `/21_更新SEO配置`: 讀取根目錄的 `seo_data_setup.md` 並同步至系統資源庫。
+- `/21_更新SEO配置`: 讀取 `config/seo_data_setup.md` 並同步至系統資源庫。
 
 ---
 

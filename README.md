@@ -152,7 +152,7 @@ AI：我找到 5 篇相關文章，開始檢查...
 |-------------|------|
 | `config/brand_profile.json` | 品牌設定（名稱、網址、風格）|
 | `docs/brand_guideline.md` | 品牌寫作指南 |
-| `seo_data_setup.md` | SEO 結構化資料設定 |
+| `config/seo_data_setup.md` | SEO 結構化資料設定 |
 | `outputs/` | AI 產出的文章存放處 |
 | `.env` | API 金鑰（不會上傳到 Git）|
 

@@ -6,7 +6,7 @@ from pathlib import Path
 
 def sync_seo_data():
     project_root = Path(__file__).resolve().parent.parent.parent.parent.parent
-    setup_file = project_root / "seo_data_setup.md"
+    setup_file = project_root / "config" / "seo_data_setup.md"
     resource_dir = project_root / ".gemini" / "skills" / "21. SEO優化師 (SEO Specialist)" / "resources" / "structured_data"
     output_file = resource_dir / "site_profile.json"
 
