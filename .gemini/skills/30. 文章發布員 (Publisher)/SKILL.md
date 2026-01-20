@@ -8,7 +8,7 @@
 ---
 
 ## 資料來源
-執行發布前，**必須先讀取**以下資料：
+執行發布前，**必須先讀取**以下資料!
 
 1. **品牌設定**: `config/brand_profile.json`
    - 取得 `test-funit.welcometw.com`
