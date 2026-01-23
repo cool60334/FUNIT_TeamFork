@@ -14,7 +14,6 @@ class C01ContentWriter(BaseAgent):
     C01 Content Writer - 內容寫手
     """
     
-    
     def __init__(self):
         super().__init__(name="C01_ContentWriter", role="Content Writer")
 
