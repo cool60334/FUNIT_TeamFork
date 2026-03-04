@@ -14,6 +14,7 @@ trigger: always_on
 
 | 使用者意圖 / 執行動作 | 應檢索之規則文件 | 核心守則 (Core Constraints) |
 | :--- | :--- | :--- |
+| **部署驗證 / 服務檢查** | `deploy-check.md` | 多層次健康檢查、日誌優先診斷、禁止暴力修改權限。|
 | **建立分支 / 合併代碼** | `branch-and-merge.md` | 禁止直推主線、強制 Squash Merge、合併後清理。|
 | **Git 提交 / 寫 Commit** | `commit-message.md` | 原子化提交、`<type>(<scope>): <subject>` 格式。 |
 | **首次建立/推送到倉庫** | `initial-push.md` | 嚴禁洩漏 Secrets、強制檢查 `.gitignore`。 |
@@ -32,6 +33,7 @@ trigger: always_on
 1. **偵測 (Detect)：** 辨別使用者的請求屬於上述哪一個開發類別。
 2. **加載 (Load)：** 宣告：「我正在根據 `[規則檔名].md` 進行安全與格式檢查...」。
 3. **預檢 (Pre-flight Check)：**
+    * **部署後驗證：** 部署完成後，不可僅憑回傳值判定成功，必須依序檢查「進程狀態 -> 埠口監聽 -> 健康檢查路徑」。
     * **分支檢查：** 是否正試圖在 `main` 分支寫入代碼？如果是，必須切換至 `type/task-description` 格式的新分支。
     * **安全性：** 是否有 Hardcoded 密鑰？是否在 Root 下執行？
     * **結構性：** 路徑是否為相對路徑（Docker/Env）或絕對路徑（Config）？Commit 是否符合原子化原則？合併時是否預備執行 Squash？
@@ -43,6 +45,7 @@ trigger: always_on
 ## 🛑 全域禁令 (Global Prohibitions)
 
 不論任何情境，若偵測到以下行為，請立即中斷並報錯：
+* **禁止暴力修復：** 嚴禁對任何目錄執行 `chmod 777` 或在無備份的情況下修改伺服器配置。
 * **禁止直推主線：** 嚴禁在 `main` 或 `master` 分支執行 commit 或 push。偵測到此行為應報錯 `BRANCH_PROTECTED`。
 * **禁止洩漏：** 嚴禁將 API Key、密碼、Token 寫入任何受版本控制的檔案。
 * **禁止模糊：** 拒絕執行任何包含 "update", "fix", "test" 等無意義描述的提交請求。
