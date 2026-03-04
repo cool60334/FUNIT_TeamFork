@@ -1,0 +1,29 @@
+# Secrets — NEVER bake into image
+.env
+.env.*
+
+# Python artifacts
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Generated data (mounted as volumes)
+data/
+outputs/
+
+# Version control & IDE
+.git/
+.gitignore
+.vscode/
+.idea/
+.gemini/
+
+# Docs & misc
+docs/
+*.log
+*.md
+dist/
+備用技能/

@@ -1,0 +1,14 @@
+# Development override — live source code editing without rebuild
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml run --rm app --topic "主題"
+services:
+  app:
+    build:
+      target: builder   # stop at builder stage for faster dev rebuilds
+    volumes:
+      # Live source code mounts (dev only — bind mounts for hot editing)
+      - ./agents:/app/agents
+      - ./utils:/app/utils
+      - ./scripts:/app/scripts
+      - ./hooks:/app/hooks
+    # Override to runtime python:3.11-slim for dev
+    image: funit-ai-agent:dev

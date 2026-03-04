@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: funit-ai-agent:latest
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      # Named volumes — persistent data (NAMED_VOLUME_ENFORCEMENT)
+      - app_data:/app/data
+      - app_outputs:/app/outputs
+      # Bind mount — brand config (read-only, no rebuild needed)
+      - ./config:/app/config:ro
+    # Override default entrypoint for one-off runs:
+    #   docker compose run --rm app --topic "主題" --brand FUNIT
+
+# Top-level named volume declarations (NAMED_VOLUME_ENFORCEMENT)
+volumes:
+  app_data:
+    driver: local
+  app_outputs:
+    driver: local

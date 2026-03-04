@@ -15,7 +15,38 @@
 
 ---
 
-## 快速開始（5 分鐘設定）
+## 快速開始（Docker — 推薦）
+
+### 前置需求
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) 已安裝並啟動
+
+### 步驟
+
+```bash
+# 1. 複製環境變數範本並填入金鑰
+cp .env.example .env
+# 編輯 .env，填入 GEMINI_API_KEY、WP_APP_PASSWORD 等
+
+# 2. 建立 Docker Image（首次或 requirements.txt 有變動時執行）
+docker compose build
+
+# 3. 執行 Pipeline（替換 --topic 為你的主題）
+docker compose run --rm app --topic "台中景點" --brand FUNIT
+
+# 4. 查看產出文章
+# 文章儲存於 Docker Named Volume，可用以下指令複製出來：
+docker compose run --rm app ls outputs/FUNIT/
+```
+
+> **開發模式**（改 code 不用 rebuild）：
+> ```bash
+> docker compose -f docker-compose.yml -f docker-compose.dev.yml run --rm app --topic "台中景點"
+> ```
+
+---
+
+## 快速開始（本機 Python — 傳統方式）
 
 ### 第一步：安裝環境
 
