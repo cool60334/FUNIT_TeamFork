@@ -1,0 +1,45 @@
+name: Deploy to Test Server
+
+on:
+  push:
+    branches:
+      - main  # 當 main 分支有 push 時觸發，請依據你的主分支名稱調整
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy files via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "."
+          target: "/opt/FUNIT_TeamFork"
+          # 排除不需要上傳到伺服器的檔案（如 .git）
+          rm: true # 部署前先清空目標目錄（選用，建議開啟以確保環境乾淨）
+
+      - name: Execute SSH commands to start Docker
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /opt/FUNIT_TeamFork
+            # 檢查是否有 docker-compose.yml
+            if [ -f "docker-compose.yml" ]; then
+              docker compose down
+              docker compose up -d --build
+              echo "Deployment successful!"
+            else
+              echo "Error: docker-compose.yml not found in /opt/FUNIT_TeamFork"
+              exit 1
+            fi
