@@ -14,6 +14,7 @@ trigger: always_on
 
 | 使用者意圖 / 執行動作 | 應檢索之規則文件 | 核心守則 (Core Constraints) |
 | :--- | :--- | :--- |
+| **建立分支 / 合併代碼** | `branch-and-merge.md` | 禁止直推主線、強制 Squash Merge、合併後清理。|
 | **Git 提交 / 寫 Commit** | `commit-message.md` | 原子化提交、`<type>(<scope>): <subject>` 格式。 |
 | **首次建立/推送到倉庫** | `initial-push.md` | 嚴禁洩漏 Secrets、強制檢查 `.gitignore`。 |
 | **日常開發與常規推送** | `normal-push.md` | 測試覆蓋率、自動排除 Build Artifacts。 |
@@ -31,8 +32,9 @@ trigger: always_on
 1. **偵測 (Detect)：** 辨別使用者的請求屬於上述哪一個開發類別。
 2. **加載 (Load)：** 宣告：「我正在根據 `[規則檔名].md` 進行安全與格式檢查...」。
 3. **預檢 (Pre-flight Check)：**
+    * **分支檢查：** 是否正試圖在 `main` 分支寫入代碼？如果是，必須切換至 `type/task-description` 格式的新分支。
     * **安全性：** 是否有 Hardcoded 密鑰？是否在 Root 下執行？
-    * **結構性：** 路徑是否為相對路徑（Docker/Env）或絕對路徑（Config）？
+    * **結構性：** 路徑是否為相對路徑（Docker/Env）或絕對路徑（Config）？Commit 是否符合原子化原則？合併時是否預備執行 Squash？
     * **完整性：** 是否有對應的測試代碼或文件更新？
 4. **執行 (Act)：** 僅在完全符合規則的情況下執行操作。若有衝突，必須指出具體規則編號並要求使用者修正。
 
@@ -41,10 +43,12 @@ trigger: always_on
 ## 🛑 全域禁令 (Global Prohibitions)
 
 不論任何情境，若偵測到以下行為，請立即中斷並報錯：
+* **禁止直推主線：** 嚴禁在 `main` 或 `master` 分支執行 commit 或 push。偵測到此行為應報錯 `BRANCH_PROTECTED`。
 * **禁止洩漏：** 嚴禁將 API Key、密碼、Token 寫入任何受版本控制的檔案。
 * **禁止模糊：** 拒絕執行任何包含 "update", "fix", "test" 等無意義描述的提交請求。
 * **禁止絕對路徑：** 在 Docker 與 Env 相關配置中，嚴禁使用特定機器的絕對路徑。
 * **禁止 Root 執行：** 產出的 Dockerfile 必須包含非 Root 使用者切換。
+* **禁止保留廢棄分支：** 合併成功後，必須立即刪除本地與遠端的功能分支（Feature Branch）。
 
 ---
 
